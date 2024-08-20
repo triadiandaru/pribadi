@@ -110,5 +110,21 @@
         "url": null,
         "created_at": "2023-11-01 18:22:58",
         "updated_at": "2024-03-09 18:22:58"
+    },
+    {
+        "id": "16",
+        "title": "Accurate Responsible Trusted PT.PAS",
+        "picture": "pas_art.webp",
+        "description_id": "<p>sistem manajemen stok yang komprehensif untuk mengelola dan melacak stok akhir berbagai material. Sistem ini mencakup fitur-fitur penting seperti pengelolaan data master untuk varian, material, dan jenis material.</p><p>Di bagian akhir, sistem ini juga menyediakan fitur laporan kartu kerja yang memudahkan pengguna untuk melihat rincian stok material, termasuk stok awal, stok akhir, total penerimaan, dan pemakaian material. Laporan ini membantu dalam memastikan transparansi dan efisiensi dalam proses manajemen material.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana</li>\r\n</ol>",
+        "description_en": "<p>A comprehensive stock management system for managing and tracking the final stock of various materials. This system includes essential features such as master data management for variants, materials, and material types.</p><p>In the final part, the system also provides a work card report feature that allows users to view detailed material stock information, including initial stock, final stock, total received, and material usage. This report helps ensure transparency and efficiency in the material management process.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana</li></ol>",
+        "ss_1": "pas_art_1.webp",
+        "ss_2": "pas_art_2.webp",
+        "ss_3": "pas_art_3.webp",
+        "ss_4": "pas_art_4.webp",
+        "tech_stack": "Bootstrap, Laravel, VueJS, MySQL",
+        "status": "Private",
+        "url": null,
+        "created_at": "2024-08-20 16:32:58",
+        "updated_at": "2024-08-20 16:32:58"
     }
 ]
