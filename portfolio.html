@@ -28,6 +28,16 @@
     .imgUrl{
         cursor: pointer
     }
+    .zoom-img {
+        cursor: zoom-in;
+        transition: transform 0.2s ease;
+    }
+
+    .zoom-img.zoomed {
+        cursor: zoom-out;
+        transform: scale(2); 
+        transform-origin: center;
+    }
     </style>
 </head>
 <body>
@@ -79,7 +89,9 @@
 
     <section id="trending_causes_main" class="section_padding">
         <div class="container">
-            <h2 class="mb-3 text-center" style="margin-top: -8%;">Portfolio</h2>
+            <h2 class="mb-3 text-center" style="margin-top: -8%;">Portfolio 
+                <span class="badge bg-primary" style="font-size: 15px; transform: translateY(-50%); position: relative; top: -5px;" id="projectCount"></span>
+            </h2>
             <div class="row" id="portfolio"></div>
             <div class="pagination-wrapper">
                 <ul class="pagination justify-content-center">
@@ -230,6 +242,8 @@
                 return b.id - a.id
             });
 
+            $('#projectCount').text(data.length);
+
             createPagination(data);
         });
 
@@ -240,10 +254,14 @@
 
             $("#contentModal").empty();
             $("#contentModal").append(`
-            <img src="${url}" alt="img" class="img-fluid" />
+            <img src="${url}" alt="img" class="img-fluid zoom-img" />
             `);
 
             $("#modal").modal("show");
+        });
+
+        $(document).on("click", ".zoom-img", function(){
+            $(this).toggleClass("zoomed");
         });
     });
     </script>
