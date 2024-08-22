@@ -28,15 +28,33 @@
     .imgUrl{
         cursor: pointer
     }
+
     .zoom-img {
         cursor: zoom-in;
         transition: transform 0.2s ease;
+        transform-origin: center;
     }
 
     .zoom-img.zoomed {
         cursor: zoom-out;
-        transform: scale(2); 
-        transform-origin: center;
+        transform: scale(2);
+    }
+
+    .zoom-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%; 
+        height: 100%;
+    }
+
+    .zoom-container img {
+        transition: transform 0.2s ease;
+        transform-origin: center center;
+        display: block;
+    }
+
+    .draggable {
+        cursor: move;
     }
     </style>
 </head>
@@ -247,6 +265,10 @@
             createPagination(data);
         });
 
+        var isDragging = false;
+        var lastX, lastY;
+        var img, imgWidth, imgHeight, containerWidth, containerHeight;
+
         $(document).on("click", ".imgUrl", function(){
             let url = $(this).attr("src");
 
@@ -254,7 +276,9 @@
 
             $("#contentModal").empty();
             $("#contentModal").append(`
-            <img src="${url}" alt="img" class="img-fluid zoom-img" />
+                <div class="zoom-container">
+                    <img src="${url}" alt="img" class="img-fluid zoom-img" />
+                </div>
             `);
 
             $("#modal").modal("show");
@@ -262,6 +286,68 @@
 
         $(document).on("click", ".zoom-img", function(){
             $(this).toggleClass("zoomed");
+
+            img = $(this);
+            imgWidth = img.width();
+            imgHeight = img.height();
+            containerWidth = img.parent().width();
+            containerHeight = img.parent().height();
+
+            if ($(this).hasClass("zoomed")) {
+                $(this).css('transform', 'scale(2)');
+                $(this).addClass("draggable");
+            } else {
+                $(this).removeClass("draggable");
+                $(this).css({transform: 'translate(0, 0) scale(1)'});
+            }
+        });
+
+        $(document).on("mousedown", ".zoom-img.zoomed", function(e) {
+            if (!$(this).hasClass("draggable")) {
+                $(this).addClass("draggable");
+                $(this).data("startX", e.clientX);
+                $(this).data("startY", e.clientY);
+            }
+        });
+
+        $(document).on("mousemove", function(e) {
+            var img = $('.zoom-img.draggable');
+            if (img.length > 0) {
+                var startX = img.data("startX");
+                var startY = img.data("startY");
+                var dx = e.clientX - startX;
+                var dy = e.clientY - startY;
+
+                var currentTransform = img.css('transform');
+                if (currentTransform === 'none') {
+                    currentTransform = 'matrix(1, 0, 0, 1, 0, 0)';
+                }
+
+                var matrix = currentTransform.replace(/[^0-9\-.,]/g, '').split(',');
+                var currentX = parseFloat(matrix[4]);
+                var currentY = parseFloat(matrix[5]);
+
+                var newX = currentX + dx;
+                var newY = currentY + dy;
+
+                var imgWidth = img.width();
+                var imgHeight = img.height();
+                var containerWidth = img.parent().width();
+                var containerHeight = img.parent().height();
+                var maxX = (imgWidth * 2 - containerWidth) / 2;
+                var maxY = (imgHeight * 2 - containerHeight) / 2;
+
+                newX = Math.max(-maxX, Math.min(newX, maxX));
+                newY = Math.max(-maxY, Math.min(newY, maxY));
+
+                img.css('transform', `translate(${newX}px, ${newY}px) scale(2)`);
+                img.data("startX", e.clientX);
+                img.data("startY", e.clientY);
+            }
+        });
+
+        $(document).on("mouseup", function() {
+            $('.zoom-img').removeClass("draggable");
         });
     });
     </script>
