@@ -177,6 +177,22 @@
     },
     {
         "id": "12",
+        "title": "Hush Wallet - Manajemen Keuangan Pribadi",
+        "picture": "hush_wallet.webp",
+        "description_id": "<p>Hush Wallet adalah aplikasi manajemen keuangan pribadi yang dirancang untuk membantu Anda melacak semua aspek keuangan mulai dari income, outcome, dan tabungan. Hush Wallet membuat pengelolaan keuangan menjadi mudah dan menyenangkan.</p>\r\n",
+        "description_en": "<p>Hush Wallet is a personal finance management app designed to help you track all aspects of your finances from income, outcomes, and savings. Hush Wallet makes managing your finances easy and fun.</p>\r\n",
+        "ss_1": "hush_wallet_1.webp",
+        "ss_2": "hush_wallet_2.webp",
+        "ss_3": "hush_wallet_3.webp",
+        "ss_4": "hush_wallet_4.webp",
+        "tech_stack": "Bootstrap, jQuery, Ajax, Laravel, MySQL",
+        "status": "Public",
+        "url": "https://github.com/andarutr/hush_wallet_laravel",
+        "created_at": "2024-07-01 11:35:00",
+        "updated_at": "2024-07-01 11:35:00"
+    },
+    {
+        "id": "13",
         "title": "E-Resepsionis PT. PAS",
         "picture": "pas_resepsionis.webp",
         "description_id": "<p>E-Resepsionis adalah system untuk mempermudah admin dalam mengetahui sudah sejauh mana suatu berkas telah diproses tanpa harus pergi ke resepsionis. Resepsionis akan memproses setiap proses berkas seperti ceklis kelengkapan berkas.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana</li>\r\n</ol>",
@@ -192,7 +208,7 @@
         "updated_at": "2024-07-20 11:35:00"
     },
     {
-        "id": "13",
+        "id": "14",
         "title": "Loker Noodle 2 PT. PAS",
         "picture": "pas_loker.webp",
         "description_id": "<p>System ini dirancang untuk memudahkan admin dalam mengelola data karyawan terkait loker penyimpanan barang secara digital. Dengan system ini, pengguna dapat dengan mudah mengelola loker untuk menyimpan barang pribadi untuk ratursan bahkan ribuan karyawan</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana</li>\r\n<li>Ubaed</li>\r\n</ol>",
@@ -208,7 +224,7 @@
         "updated_at": "2024-08-02 07:35:00"
     },
     {
-        "id": "14",
+        "id": "15",
         "title": "Accurate Responsible Trusted PT.PAS",
         "picture": "pas_art.webp",
         "description_id": "<p>sistem manajemen stok yang komprehensif untuk mengelola dan melacak stok akhir berbagai material. Sistem ini mencakup fitur-fitur penting seperti pengelolaan data master untuk varian, material, dan jenis material.</p><p>Di bagian akhir, sistem ini juga menyediakan fitur laporan kartu kerja yang memudahkan pengguna untuk melihat rincian stok material, termasuk stok awal, stok akhir, total penerimaan, dan pemakaian material. Laporan ini membantu dalam memastikan transparansi dan efisiensi dalam proses manajemen material.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana</li>\r\n</ol>",
