@@ -56,6 +56,75 @@
     .draggable {
         cursor: move;
     }
+
+    .portfolio-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 2px solid #403A49; /* Warna border */
+        box-shadow: 0 4px 8px rgba(32, 24, 45, 0.2); /* Warna bayangan */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .portfolio-card:hover {
+        box-shadow: 0 8px 16px rgba(32, 24, 45, 0.3); /* Warna bayangan saat hover */
+        transform: translateY(-5px);
+    }
+
+    .pagination-wrapper {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: #007bff;
+        background-color: #fff;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pagination .page-item {
+        margin: 0 5px;
+    }
+
+    .pagination .page-link {
+        display: block;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .pagination .page-link:hover {
+        background-color: #403A49;
+        color: white;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #403A49;
+        color: white;
+        border-color: #007bff;
+        cursor: default;
+    }
+
+    .pagination .page-item.active .page-link:hover {
+        background-color: #403A49;
+        border-color: #0056b3;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        color: #6c757d;
+        cursor: not-allowed;
+        background-color: #403A49;
+        border-color: #dee2e6;
+    }
+
     </style>
 </head>
 <body>
@@ -120,7 +189,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="titleModal"></h5>
@@ -146,7 +215,7 @@
     <script src="assets/js/custom.js"></script>
     <script>
     $(document).ready(function(){
-        var itemsPerPage = 3;
+        var itemsPerPage = 4;
 
         function getBadgeColor(techStack) {
             const colors = {
@@ -178,57 +247,65 @@
                 }).join(' ');
 
                 $('#portfolio').append(`
-                <div class="col-lg-8 mb-5 mx-auto">
-                    <div class="details_wrapper_area">
-                        <div class="details_text_wrapper">
-                            <a href="#" class="tags_noted">`+ moment(`${item.created_at}`).format('D MMMM YYYY') + `</a>
-                            <h3>${item.title}</h3>
-                            <img src="assets/img/portfolio/${item.picture}" class="img-fluid rounded imgUrl mt-3 mb-3" alt="img">
-                            ${badges} <!-- Menampilkan badge tech stack dinamis -->
-                            <h3>Deskripsi</h3>
-                            ${item.description_id}
-                            <h3>Status</h3>
-                            <p>${item.status}</p>
-                            <h3>Screenshot</h3>
-                            <div class="row popup-gallery">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="details_small_img">
-                                        <div class="gallery_item">
-                                            <img src="assets/img/portfolio/${item.ss_1}" alt="img" class="imgUrl">
+                <div class="col-lg-10 mb-5 mx-auto">
+                    <div class="card portfolio-card p-2" style="border-radius: 25px; box-shadow: 10px yellow;"">
+                        <div class="card-header" style=" background-color: transparent !important; border-bottom: none;">
+                            <h3 class="text-center">
+                                ${item.id}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="details_wrapper_area">
+                                <div class="details_text_wrapper">
+                                    <a href="#" class="tags_noted">`+ moment(`${item.created_at}`).format('D MMMM YYYY') + `</a>
+                                    <h3>${item.title}</h3>
+                                    <img src="assets/img/portfolio/${item.picture}" class="img-fluid rounded imgUrl mt-3 mb-3" alt="img">
+                                    ${badges} <!-- Menampilkan badge tech stack dinamis -->
+                                    <h3>Deskripsi</h3>
+                                    ${item.description_id}
+                                    <h3>Status</h3>
+                                    <p>${item.status}</p>
+                                    <h3>Screenshot</h3>
+                                    <div class="row popup-gallery">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="details_small_img">
+                                                <div class="gallery_item">
+                                                    <img src="assets/img/portfolio/${item.ss_1}" alt="img" class="imgUrl">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="details_small_img">
+                                                <div class="gallery_item">
+                                                    <img src="assets/img/portfolio/${item.ss_2}" alt="img" class="imgUrl">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="details_small_img">
+                                                <div class="gallery_item">
+                                                    <img src="assets/img/portfolio/${item.ss_3}" alt="img" class="imgUrl">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="details_small_img">
+                                                <div class="gallery_item">
+                                                    <img src="assets/img/portfolio/${item.ss_4}" alt="img" class="imgUrl">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="details_small_img">
-                                        <div class="gallery_item">
-                                            <img src="assets/img/portfolio/${item.ss_2}" alt="img" class="imgUrl">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="details_small_img">
-                                        <div class="gallery_item">
-                                            <img src="assets/img/portfolio/${item.ss_3}" alt="img" class="imgUrl">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="details_small_img">
-                                        <div class="gallery_item">
-                                            <img src="assets/img/portfolio/${item.ss_4}" alt="img" class="imgUrl">
-                                        </div>
-                                    </div>
+                                    ${item.url ? `
+                                        <center>
+                                            <a href="${item.url}" class="btn btn-primary" target="_blank">Link</a>
+                                        </center>
+                                    ` : ''}
                                 </div>
                             </div>
-                            ${item.url ? `
-                                <center>
-                                    <a href="${item.url}" class="btn btn-primary" target="_blank">Link</a>
-                                </center>
-                            ` : ''}
                         </div>
                     </div>
                 </div>
-                <hr>
                 `);
             }
 
