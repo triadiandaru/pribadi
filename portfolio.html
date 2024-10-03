@@ -57,19 +57,6 @@
         cursor: move;
     }
 
-    .portfolio-card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        border: 2px solid #403A49; /* Warna border */
-        box-shadow: 0 4px 8px rgba(32, 24, 45, 0.2); /* Warna bayangan */
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    .portfolio-card:hover {
-        box-shadow: 0 8px 16px rgba(32, 24, 45, 0.3); /* Warna bayangan saat hover */
-        transform: translateY(-5px);
-    }
-
     .pagination-wrapper {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -184,7 +171,7 @@
             </h2>
             <div class="row">
                 <div class="col-lg-10 col-12 mb-5 mx-auto">
-                    <div class="card portfolio-card p-2" style="border-radius: 25px; box-shadow: 10px yellow;"">
+                    <div class="card shadow p-2" style="border-radius: 25px;">
                         <div class="card-header" style=" background-color: transparent !important; border-bottom: none;">
                         </div>
                         <div class="card-body">
@@ -205,8 +192,7 @@
             </div>
             <div class="row" id="portfolio"></div>
             <div class="pagination-wrapper">
-                <ul class="pagination justify-content-center">
-                </ul>
+                <ul class="pagination justify-content-center"></ul>
             </div>
         </div>
     </section>
@@ -273,7 +259,7 @@
 
                 $('#portfolio').append(`
                 <div class="col-lg-10 mb-5 mx-auto">
-                    <div class="card portfolio-card p-2" style="border-radius: 25px; box-shadow: 10px yellow;">
+                    <div class="card shadow p-2" style="border-radius: 25px;">
                         <div class="card-header" style="background-color: transparent !important; border-bottom: none;">
                             <h3 class="text-center">${item.id}</h3>
                         </div>
