@@ -686,6 +686,17 @@ section {
   text-align: right;
 }
 
+@media (max-width: 768px) {
+  .banner_one_img {
+    text-align: center; 
+  }
+  
+  .banner_one_img img {
+    width: 100%; 
+    height: auto; 
+  }
+}
+
 .banner_one_text h1 span {
   font-weight: 700;
 }
