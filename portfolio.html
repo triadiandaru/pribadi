@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="assets/css/navber.css" />
     <link rel="stylesheet" href="assets/css/meanmenu.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bt-icon.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <style>
     .click_menu {
         cursor: pointer
+    }
+
+    .icon-white {
+        fill: white;
+        filter: brightness(0) invert(1);
     }
 
     .pagination-wrapper .pagination .page-item.active .page-link {
@@ -305,11 +311,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    ${item.url ? `
-                                        <center>
-                                            <a href="${item.url}" class="btn btn-primary" target="_blank">Link</a>
-                                        </center>
+                                    <center>
+                                    ${item.url_github ? `
+                                        <a href="${item.url_github}" class="btn btn-sm btn-secondary" target="_blank"><img class="icon-white" src="assets/img/icon/github.svg"> Github</a>
                                     ` : ''}
+                                    ${item.url_pptx ? `
+                                        <a href="${item.url_pptx}" class="btn btn-sm btn-danger" target="_blank"><img class="icon-white" src="assets/img/icon/journal-code.svg"> Document</a>
+                                    ` : ''}
+                                    ${item.url_video ? `
+                                        <a href="${item.url_video}" class="btn btn-sm btn-primary" target="_blank"><img class="icon-white" src="assets/img/icon/camera-video.svg"> Demo</a>
+                                    ` : ''}
+                                    </center>
                                 </div>
                             </div>
                         </div>
