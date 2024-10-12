@@ -286,5 +286,23 @@
         "url_pptx": null,
         "created_at": "2024-09-05 16:42:00",
         "updated_at": "2024-09-05 16:42:00"
+    },
+    {
+        "id": "17",
+        "title": "CV. Bintang Makmur Sejahtera",
+        "picture": "cv_bms.webp",
+        "description_id": "<p>CV Bintang Makmur Sejahtera menyediakan sayur-sayuran berkualitas tinggi, segar, dan terjamin, siap mendukung kebutuhan bisnis Anda.</p>\r\n<h3>Visi</h3>\r\n<p>Menjadi penyedia sayur-sayuran terkemuka yang berkomitmen untuk menyuplai produk segar dan berkualitas tinggi, serta memberikan kontribusi positif bagi kesehatan masyarakat.</p>\r\n<h3>Misi</h3>\r\n<ol>\r\n<li>Menjamin kualitas dan kesegaran sayur-sayuran yang kami tawarkan kepada pelanggan.</li>\r\n<li>Mendukung petani lokal dengan menyediakan pasar yang adil untuk produk mereka.</li>\r\n<li>Memberikan layanan pelanggan yang terbaik untuk memastikan kepuasan pelanggan.</li>\r\n<li>Berkomitmen untuk praktik bisnis berkelanjutan dan ramah lingkungan.</li>\r\n</ol>",
+        "description_en": "<p>CV Bintang Makmur Sejahtera provides high-quality, fresh vegetables that are guaranteed to support your business needs.</p>\r\n<h3>Vision</h3>\r\n<p>To become a leading provider of vegetables committed to supplying fresh and high-quality products while making a positive contribution to public health.</p>\r\n<h3>Mission</h3>\r\n<ol>\r\n<li>To ensure the quality and freshness of the vegetables we offer to our customers.</li>\r\n<li>To support local farmers by providing a fair market for their products.</li>\r\n<li>To deliver the best customer service to ensure customer satisfaction.</li>\r\n<li>To commit to sustainable and environmentally friendly business practices.</li>\r\n</ol>",
+        "ss_1": "cv_bms_1.webp",
+        "ss_2": "cv_bms_2.webp",
+        "ss_3": "cv_bms_3.webp",
+        "ss_4": "cv_bms_4.webp",
+        "tech_stack": "Bootstrap",
+        "status": "Private",
+        "url_github": null,
+        "url_video": null,
+        "url_pptx": null,
+        "created_at": "2024-10-12 11:30:00",
+        "updated_at": "2024-10-12 11:30:00"
     }
 ]
