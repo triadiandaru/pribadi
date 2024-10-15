@@ -304,5 +304,23 @@
         "url_pptx": null,
         "created_at": "2024-10-12 11:30:00",
         "updated_at": "2024-10-12 11:30:00"
+    },
+    {
+        "id": "18",
+        "title": "System Antrian Bongkar Muat Dept.WRH",
+        "picture": "antrian_bongkar_muat_wrh.webp",
+        "description_id": "<p>Sistem Antrian Bongkar Muat adalah aplikasi web yang dirancang untuk mengelola dan memantau proses bongkar muat di department WRH. Sistem ini bertujuan untuk meningkatkan efisiensi dan transparansi dalam proses antrian truk atau kendaraan yang melakukan bongkar muat, sehingga mengurangi waktu tunggu dan meminimalisir kemacetan.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana.</li>\r\n</ol>",
+        "description_en": "<p>The Loading and Unloading Queue System is a web application designed to manage and monitor the loading and unloading processes in the WRH department. This system aims to enhance efficiency and transparency in the queue process for trucks or vehicles involved in loading and unloading, thereby reducing wait times and minimizing congestion.</p>\r\n<h3>Credits</h3>\r\n<ol>\r\n<li>Heri Lesmana.</li>\r\n</ol>",
+        "ss_1": "antrian_bongkar_muat_wrh_1.webp",
+        "ss_2": "antrian_bongkar_muat_wrh_2.webp",
+        "ss_3": "antrian_bongkar_muat_wrh_3.webp",
+        "ss_4": "antrian_bongkar_muat_wrh_4.webp",
+        "tech_stack": "Bootstrap, jQuery, Ajax, Laravel, Websocket, MySQL",
+        "status": "Private",
+        "url_github": null,
+        "url_video": null,
+        "url_pptx": null,
+        "created_at": "2024-10-15 19:10:00",
+        "updated_at": "2024-10-15 19:10:00"
     }
 ]
